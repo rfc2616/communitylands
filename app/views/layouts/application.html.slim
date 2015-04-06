@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title= @title || "Community Lands"
+    - if @description
+      meta name="description" content="#{@description}"
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet" type="text/css"
+    = csrf_meta_tags
+
+  body
+    .container
+      - if flash[:notice] || flash[:warning]
+        .alert.alert-block.alert-warning= flash[:notice] || flash[:warning]
+      = yield
+
