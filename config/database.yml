@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: communitylands_production
-  username: communitylands
-  password: <%= ENV['COMMUNITYLANDS_DATABASE_PASSWORD'] %>
